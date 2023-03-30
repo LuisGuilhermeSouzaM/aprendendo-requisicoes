@@ -5,11 +5,11 @@ async function listaVideos() {
     return conexaoConvertida;
 }
 
-async function criaVideo(titulo, descricao, url, imagem){
+async function criaVideo(titulo, descricao, url, imagem) {
     const conexao = await fetch("http://localhost:3000/videos", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-type": "application/json"
         },
         body: JSON.stringify({
             titulo: titulo,
@@ -18,7 +18,8 @@ async function criaVideo(titulo, descricao, url, imagem){
             imagem: imagem
         })
     });
-    const conexaoConvertida = await conexao.json();
+
+    const conexaoConvertida = conexao.json();
 
     return conexaoConvertida;
 }
